@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Feeder</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <button onclick="dispense_treat()">Dispense Treat</button>
+
+<script type="text/javascript">
+    function dispense_treat(){
+        console.log("Dispensing Treat");
+        start_communication();
+        open_door();
+        setTimeout(2000,close_door());
+        console.log("Dispensed Treat");
+    }
+    
+    function start_communication(){
+        $.get("https://cloud.boltiot.com/remote/63b45fb2-cac0-455b-afa4-a8c34df8c193/serialBegin?baud=9600&deviceName=BOLT3432337");
+        console.log("Init Communication");
+    }
+    
+    function open_door(){
+        $.get("https://cloud.boltiot.com/remote/63b45fb2-cac0-455b-afa4-a8c34df8c193/serialWrite?data=a&deviceName=BOLT3432337");
+        console.log("Opened Door");
+    }
+    
+    function close_door(){
+        $.get("https://cloud.boltiot.com/remote/63b45fb2-cac0-455b-afa4-a8c34df8c193/serialWrite?data=b&deviceName=BOLT3432337");
+        console.log("Closed Door");
+    }
+</script>
+
+
+</body>
+</html>
