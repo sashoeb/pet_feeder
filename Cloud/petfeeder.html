@@ -51,11 +51,11 @@
     }
     
     function cmd_serial_write(data_val){
-        $.get("https://cloud.boltiot.com/remote/63b45fb2-cac0-455b-afa4-a8c34df8c193/serialWrite?data="+data_val+"&deviceName=BOLT3432337");
+        $.get("https://cloud.boltiot.com/remote/"+"Your API Key Here"+"/serialWrite?data="+data_val+"&deviceName="+"Your Bolt ID here");
     }
     
     function cmd_serial_begin(){
-        $.get("https://cloud.boltiot.com/remote/63b45fb2-cac0-455b-afa4-a8c34df8c193/serialBegin?baud=9600&deviceName=BOLT3432337");
+        $.get("https://cloud.boltiot.com/remote/"+"Your API Key Here"+"/serialBegin?baud=9600&deviceName="+"Your Bolt ID here");
     }
 </script>
 
