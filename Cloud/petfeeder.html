@@ -3,12 +3,28 @@
 <head>
     <title>Pet Feeder</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+
 </head>
 <body>
 
     <img src="https://www.ocado.com/productImages/318/318230011_0_640x640.jpg?identifier=6ddefc8930be133fea1d5592179870a2" alt="Feed me">
     <br>
-    <button onclick="dispense_treat()">Feed me!</button>
+    <button class="button" onclick="dispense_treat()">Feed me!</button>
 
 <script type="text/javascript">
     function dispense_treat(){
