@@ -18,18 +18,26 @@
     }
     
     function start_communication(){
-        $.get("https://cloud.boltiot.com/remote/63b45fb2-cac0-455b-afa4-a8c34df8c193/serialBegin?baud=9600&deviceName=BOLT3432337");
+        cmd_serial_begin();
         console.log("Init Communication");
     }
     
     function open_door(){
-        $.get("https://cloud.boltiot.com/remote/63b45fb2-cac0-455b-afa4-a8c34df8c193/serialWrite?data=a&deviceName=BOLT3432337");
+        cmd_serial_write("a");
         console.log("Opened Door");
     }
     
     function close_door(){
-        $.get("https://cloud.boltiot.com/remote/63b45fb2-cac0-455b-afa4-a8c34df8c193/serialWrite?data=b&deviceName=BOLT3432337");
+        cmd_serial_write("b");
         console.log("Closed Door");
+    }
+    
+    function cmd_serial_write(data_val){
+        $.get("https://cloud.boltiot.com/remote/63b45fb2-cac0-455b-afa4-a8c34df8c193/serialWrite?data="+data_val+"&deviceName=BOLT3432337");
+    }
+    
+    function cmd_serial_begin(){
+        $.get("https://cloud.boltiot.com/remote/63b45fb2-cac0-455b-afa4-a8c34df8c193/serialBegin?baud=9600&deviceName=BOLT3432337");
     }
 </script>
 
